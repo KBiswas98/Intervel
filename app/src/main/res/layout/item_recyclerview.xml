@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="100dp"
+    android:layout_height="160dp"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="5dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:id="@+id/gried_card">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/card_movie_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="#494848"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/card_movie_reating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="5.8"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/card_movie_name"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:background="#fafafa"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text="DeadPool"
+                android:fontFamily="monospace"
+                android:textSize="13sp"
+                android:textColor="#202020"
+                />
+
+        </RelativeLayout>
+
+
+
+</android.support.v7.widget.CardView>
