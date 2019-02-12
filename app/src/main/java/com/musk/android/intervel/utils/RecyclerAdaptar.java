@@ -7,25 +7,32 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.musk.android.intervel.Movie.Movies;
 import com.musk.android.intervel.R;
 
 import java.util.List;
 
 public class RecyclerAdaptar extends RecyclerView.Adapter<RecyclerAdaptar.ViewHolder> {
-
+    private static final String TAG = "RecyclerAdaptar";
     private Context mContext;
     private List<Movies> mMovies;
+//    private ProgressBar progressBar;
 
     public RecyclerAdaptar(Context mContext, List<Movies> mMovies) {
         this.mContext = mContext;
         this.mMovies = mMovies;
+//        this.progressBar = progressBar;
     }
 
     @NonNull
@@ -40,8 +47,23 @@ public class RecyclerAdaptar extends RecyclerView.Adapter<RecyclerAdaptar.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdaptar.ViewHolder viewHolder, int i) {
         viewHolder.movieName.setText(mMovies.get(i).getMovieName());
-        viewHolder.movieReating.setText(Float.toString(mMovies.get(i).getReating()));
-        viewHolder.movieThumbneil.setImageResource(mMovies.get(i).getThumbnail());
+        viewHolder.movieReating.setText(Double.toString(mMovies.get(i).getReating()));
+
+//        this.progressBar.setVisibility(View.VISIBLE);
+        Glide.with(mContext).load(mMovies.get(i).getThumbnail()).listener(new RequestListener<String, GlideDrawable>() {
+            @Override
+            public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                Log.d(TAG, "onException: ");
+                return false;
+            }
+
+            @Override
+            public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                Log.d(TAG, "onResourceReady: ");
+                return false;
+            }
+        }).into(viewHolder.movieThumbneil);
+//        this.progressBar.setVisibility(View.GONE);
     }
 
     @Override
@@ -60,7 +82,7 @@ public class RecyclerAdaptar extends RecyclerView.Adapter<RecyclerAdaptar.ViewHo
 
             movieName = (TextView)itemView.findViewById(R.id.card_movie_name);
             movieReating = (TextView)itemView.findViewById(R.id.card_movie_reating);
-            movieThumbneil = itemView.findViewById(R.id.card_movie_image);
+            movieThumbneil = (ImageView) itemView.findViewById(R.id.card_movie_image);
             cardView = (CardView)itemView.findViewById(R.id.gried_card);
         }
     }

@@ -14,6 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
+
             <ImageView
                 android:id="@+id/card_movie_image"
                 android:layout_width="match_parent"
@@ -41,9 +43,17 @@
                 android:gravity="center"
                 android:text="DeadPool"
                 android:fontFamily="monospace"
-                android:textSize="13sp"
+                android:textSize="10sp"
                 android:textColor="#202020"
+                android:padding="2sp"
                 />
+
+            <ProgressBar
+                android:id="@+id/moviePosterDownload"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"/>
 
         </RelativeLayout>
 

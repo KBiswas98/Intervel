@@ -1,13 +1,8 @@
 package com.musk.android.intervel.utils;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.RelativeLayout;
 
 public class CustomScrollerListener extends RecyclerView.OnScrollListener {
@@ -16,10 +11,8 @@ public class CustomScrollerListener extends RecyclerView.OnScrollListener {
     private RelativeLayout top_actionbar;
     private View view;
 
-    public CustomScrollerListener(RelativeLayout actionbar,View view)
+    public CustomScrollerListener()
     {
-        this.top_actionbar = actionbar;
-        this.view = view;
     }
     public void onScrollStageChange(RecyclerView recyclerView, int newState){
         switch (newState){
