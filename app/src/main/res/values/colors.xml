@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="colorPrimary">#F50057</color>
     <color name="colorPrimaryDark">#F50057</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--<color name="colorRed">#FF0202</color>-->
+    <color name="colorAccent">#69F0AE</color>
     <color name="viewBg">#f1f5f8</color>
     <color name="album_title">#4c4c4c</color>
+
+    <color name="green_background_2" tools:ignore="MissingDefaultResource">#69F0AE</color>
+    <color name="green_background_1">#B9F6CA</color>
+    <color name="green_background_3">#00E676</color>
+    <color name="green_background_4">#00C853</color>
 </resources>

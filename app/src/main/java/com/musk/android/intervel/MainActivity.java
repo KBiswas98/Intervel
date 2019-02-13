@@ -102,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
             try{
                 Log.d(TAG, "doInBackground: 2nd try");
                 HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
+
+//                HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
+
                 InputStream inputStream = urlConnection.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 String s = bufferedReader.readLine();
